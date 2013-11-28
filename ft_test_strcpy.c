@@ -6,7 +6,7 @@
 /*   By: amerle <amerle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 10:20:23 by amerle            #+#    #+#             */
-/*   Updated: 2013/11/27 14:05:44 by aviala           ###   ########.fr       */
+/*   Updated: 2013/11/27 22:53:03 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 static int	ft_test_strcpy2(char const *s1, const char *s2)
 {
 	int		res;
-	char	*str1;
 	char	*str2;
+	char	*str1;
 
 	res = 0;
 	str2 = strdup(s1);
@@ -26,9 +26,10 @@ static int	ft_test_strcpy2(char const *s1, const char *s2)
 	if (strcmp(str1, str2))
 		++res;
 	printf("Test \"%s\" : { \"%s\" | \"%s\" }", s2, str2, str1);
+	ft_print_status(res);
+
 	free(str1);
 	free(str2);
-	ft_print_status(res);
 	return (res);
 }
 
