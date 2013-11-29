@@ -1,6 +1,6 @@
 #include "test.h"
 
-int	ft_test_strcat2(char *s1, char const *s2, size_t len_buffer)
+static int	ft_test_strcat2(char *s1, char const *s2, size_t len_buffer)
 {
 	int		res;
 	char	*res2;
@@ -13,7 +13,7 @@ int	ft_test_strcat2(char *s1, char const *s2, size_t len_buffer)
 	if (res2 != s1)
 		++res;
 	strcat(str2, s2);
-	if (strcmp(str2, s1))
+	if (strcmp_bsd(str2, s1))
 		++res;
 	printf("Test : { \"%s\" }", s1);
 	free(str2);

@@ -31,16 +31,21 @@ static int	ft_test_bzero2(void *buf, size_t len)
 	return (res);
 }
 
-int			ft_test_bzero()
+int	    ft_test_bzero(void)
 {
-	int			res;
+	int			  res;
 	t_struct1	s_test;
+  char      *tmp;
 
+  tmp = (char *) malloc(sizeof(char) * strlen("You will fail :D"));
+
+  s_test.m_str = tmp;
+  s_test.m_char = 't';
+  s_test.m_int  = 45;
 	res = 0;
 	ft_print_begin("ft_bzero");
-	s_test.m_str = "You will fail :D";
-	s_test.m_char = 't';
-	s_test.m_int = 45;
 	res += ft_test_bzero2(&s_test, sizeof(t_struct1));
+	free(tmp);
+	tmp = NULL;
 	return (ft_print_end(res));
 }

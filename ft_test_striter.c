@@ -16,7 +16,7 @@ static void	ft_toupper3(unsigned int i, char *c)
 	}
 }
 
-int		ft_test_striter2(char *s, void (*f)(char *c))
+static int		ft_test_striter2(char *s, void (*f)(char *c))
 {
 	int		res;
 	size_t	len;
@@ -41,7 +41,7 @@ int		ft_test_striter2(char *s, void (*f)(char *c))
 	return (res);
 }
 
-int		ft_test_striteri(char *s, void (*f)(unsigned int, char*))
+static int		ft_test_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	int		res;
 	size_t	len;
@@ -65,7 +65,7 @@ int		ft_test_striteri(char *s, void (*f)(unsigned int, char*))
 	printf(" { \"%s\" }", s);
 	free(save);
 	ft_print_status(res);
-	return (res);	
+	return (res);
 }
 
 int		ft_test_striter(void)

@@ -1,6 +1,6 @@
 #include "test.h"
 
-int	ft_test_strnstr2(char const *s1, char const *s2, int n)
+static int	ft_test_strnstr2(char const *s1, char const *s2, int n)
 {
 	int		res;
 	char	*res2;

@@ -1,6 +1,6 @@
 #include "test.h"
 
-int	ft_test_atoi2(char *str)
+static int	ft_test_atoi2(const char *str)
 {
 	int	res;
 	int	res2;

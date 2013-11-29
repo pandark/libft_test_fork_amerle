@@ -1,13 +1,16 @@
 #include "test.h"
 
-int	ft_test_strsub2(char const *s1, unsigned int start, size_t len, char const *str_final)
+static int	ft_test_strsub2(char const *s1,
+                            unsigned int start,
+                            size_t len,
+                            char const *str_final)
 {
 	int		res;
 	char	*str;
 
 	res = 0;
 	str = ft_strsub(s1, start, len);
-	if (str && strcmp(str, str_final))
+	if (str && strcmp_bsd(str, str_final))
 		++res;
 	else if (!str && len > 0)
 		++res;

@@ -13,7 +13,7 @@ static char	ft_toupper3(unsigned int i, char c)
 		return (c);
 }
 
-int	ft_test_strmap2(char const *s, char (*f)(char))
+static int	ft_test_strmap2(char const *s, char (*f)(char))
 {
 	int		res;
 	size_t	len;
@@ -40,7 +40,7 @@ int	ft_test_strmap2(char const *s, char (*f)(char))
 	return (res);
 }
 
-int	ft_test_strmapi(char const *s, char (*f)(unsigned int, char))
+static int	ft_test_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	int		res;
 	size_t	len;

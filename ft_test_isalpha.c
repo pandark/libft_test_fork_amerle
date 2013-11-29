@@ -1,6 +1,6 @@
 #include "test.h"
 
-int	ft_test_isalpha2(char c)
+static int	ft_test_isalpha2(const char c)
 {
 	int	res;
 	int	res2;

@@ -11,7 +11,7 @@ int	ft_test_itoa2(int number, char const *final)
 		++res;
 	if (res2)
 	{
-		if (strcmp(res2, final))
+		if (strcmp_bsd(res2, final))
 			++res;
 	}
 	printf("Test : %d { \"%s\" - \"%s\" }", number, res2, final);

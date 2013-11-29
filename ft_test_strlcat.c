@@ -1,6 +1,5 @@
 #include "test.h"
-
-int	ft_test_strlcat2(char const *s1, char const *s2, size_t dest_size)
+static int		ft_test_strlcat2(char const *s1, char const *s2, size_t dest_size)
 {
 	int		res;
 	size_t	res2;
@@ -20,7 +19,7 @@ int	ft_test_strlcat2(char const *s1, char const *s2, size_t dest_size)
 		printf("Error different return betwenn std and libft\n");
 		++res;
 	}
-	else if (strcmp(str3, str2))
+	else if (strcmp_bsd(str3, str2))
 	{
 		printf("Error different copying behaviour on dest\n");
 		++res;

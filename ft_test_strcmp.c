@@ -12,7 +12,7 @@
 
 #include "test.h"
 
-static int 	ft_test_strcmp2(char *str, char *str2)
+static int 	ft_test_strcmp2(const char *str, const char *str2)
 {
 	int	res;
 	int	res2;
@@ -20,7 +20,7 @@ static int 	ft_test_strcmp2(char *str, char *str2)
 
 	res = 0;
 	res3 = ft_strcmp(str, str2);
-	res2 = strcmp(str, str2);
+	res2 = strcmp_bsd(str, str2);
 	printf("Compare \"%s\" and \"%s\" { %d | %d }", str, str2, res2, res3);
 	if (res2 != res3)
 		++res;

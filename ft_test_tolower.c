@@ -1,6 +1,6 @@
 #include "test.h"
 
-int	ft_test_tolower2(int c)
+static int	ft_test_tolower2(int c)
 {
 	int	res;
 	int	res2;
@@ -19,12 +19,16 @@ int	ft_test_tolower2(int c)
 int	ft_test_tolower(void)
 {
 	int	res;
+	char  c;
+
+	c = 'A';
 
 	res = 0;
 	ft_print_begin("ft_tolower");
-	res += ft_test_tolower2('e');
-	res += ft_test_tolower2('A');
-	res += ft_test_tolower2('0');
-	res += ft_test_tolower2('\n');
+	while (c <= 'Z')
+	{
+	  	res += ft_test_tolower2(c);
+	  	c++;
+	}
 	return (ft_print_end(res));
 }

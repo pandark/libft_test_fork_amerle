@@ -1,6 +1,6 @@
 #include "test.h"
 
-int	ft_test_strequ2(char const *s1, char const *s2)
+static int	ft_test_strequ2(char const *s1, char const *s2)
 {
 	int	res;
 	int	res2;
@@ -8,7 +8,7 @@ int	ft_test_strequ2(char const *s1, char const *s2)
 
 	res = 0;
 	res2 = ft_strequ(s1, s2);
-	res3 = (strcmp(s1, s2)) ? 0 : 1;
+	res3 = (strcmp_bsd(s1, s2)) ? 0 : 1;
 	if (res2 != res3)
 		++res;
 	printf("Test : Compare \"%s\" and \"%s\" { %d - %d }", s1, s2, res2, res3);
@@ -16,7 +16,7 @@ int	ft_test_strequ2(char const *s1, char const *s2)
 	return (res);
 }
 
-int	ft_test_strnequ(char const *s1, char const *s2, int n)
+static int	ft_test_strnequ(char const *s1, char const *s2, int n)
 {
 	int	res;
 	int	res2;
@@ -24,7 +24,7 @@ int	ft_test_strnequ(char const *s1, char const *s2, int n)
 
 	res = 0;
 	res2 = ft_strnequ(s1, s2, n);
-	res3 = (strncmp(s1, s2, n)) ? 0 : 1;
+	res3 = (strncmp_bsd(s1, s2, n)) ? 0 : 1;
 	if (res2 != res3)
 		++res;
 	printf("Test : Compare \"%s\" and \"%s\" (%d) { %d - %d }", s1, s2, n, res2, res3);

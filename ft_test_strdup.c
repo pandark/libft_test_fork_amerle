@@ -23,9 +23,11 @@ static int	ft_test_strdup2(const char *str)
 	cpy = ft_strdup(str);
 	cpy2 = strdup(str);
 	printf("Test \"%s\" : { \"%s\" | \"%s\" }", str, cpy, cpy2);
-	if (strcmp(cpy, cpy2))
+	if (strcmp_bsd(cpy, cpy2))
 		++res;
 	ft_print_status(res);
+	free(cpy2);
+	free(cpy);
 	return (res);
 }
 

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "test.h"
+#include <string.h>
 
 static int	ft_test_memmove2(char *str, const char *src, size_t len)
 {
@@ -19,14 +20,14 @@ static int	ft_test_memmove2(char *str, const char *src, size_t len)
 
 	res = 0;
 	src2 = strdup(src);
-	printf("Test : \"%s\" and \"%s\" (%zu)", str, src, len);
+	printf("Test : \"%s\" and \"%s\" (%lu)", str, src, len);
 	ft_memmove(str, src, len);
 	memmove((src2 + (src - str)), src2, len);
 	if (memcmp((src2 + (src - str)), str, len))
 		++res;
-	free(src2);
 	printf(" { \"%s\" | \"%s\" }", str, (src2 + (src - str)));
 	ft_print_status(res);
+  free(src2);
 	return (res);
 }
 

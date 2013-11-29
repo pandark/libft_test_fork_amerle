@@ -1,6 +1,6 @@
 #include "test.h"
 
-int	ft_test_isascii2(char c)
+static int	ft_test_isascii2(const char c)
 {
 	int	res;
 	int	res2;
@@ -18,14 +18,16 @@ int	ft_test_isascii2(char c)
 
 int	ft_test_isascii(void)
 {
-	int	res;
+	int	            res;
+  unsigned char   c;
 
+  c = 0;
 	res = 0;
 	ft_print_begin("ft_isascii");
-	res += ft_test_isascii2('e');
-	res += ft_test_isascii2('A');
-	res += ft_test_isascii2('0');
-	res += ft_test_isascii2('\n');
-	res += ft_test_isascii2(0xF2);
+	while (c <= 127)
+	{
+	  res += ft_test_isascii2((char)c);
+	  c++;
+	}
 	return (ft_print_end(res));
 }

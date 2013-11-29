@@ -1,6 +1,6 @@
 #include "test.h"
 
-int	ft_test_putstr2(char const *str)
+static int	ft_test_putstr2(char const *str)
 {
 	int		res;
 	char	*res2;
@@ -17,7 +17,7 @@ int	ft_test_putstr2(char const *str)
 	fd = open("log.txt", O_RDONLY);
 	read(fd, res2, len);
 	close(fd);
-	if (strcmp(res2, str))
+	if (strcmp_bsd(res2, str))
 		++res;
 	printf("Test : \"%s\" { \"%s\" }", str, res2);
 	free(res2);

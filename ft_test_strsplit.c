@@ -13,7 +13,7 @@ int	ft_test_strsplit2(char const *s, char c, char **final)
 	while (*final && *tab_res)
 	{
 		printf("\tCompare : \"%s\" - \"%s\"\n", *final, *tab_res);
-		if (strcmp(*final, *tab_res))
+		if (strcmp_bsd(*final, *tab_res))
 			++res;
 		++final;
 		++tab_res;

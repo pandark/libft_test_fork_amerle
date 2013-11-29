@@ -23,7 +23,7 @@ static int	ft_test_strcpy2(char const *s1, const char *s2)
 	str1 = strdup(s1);
 	ft_strcpy(str2, s2);
 	strcpy(str1, s2);
-	if (strcmp(str1, str2))
+	if (strcmp_bsd(str1, str2))
 		++res;
 	printf("Test \"%s\" : { \"%s\" | \"%s\" }", s2, str2, str1);
 	ft_print_status(res);

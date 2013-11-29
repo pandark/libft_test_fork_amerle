@@ -1,6 +1,6 @@
 #include "test.h"
 
-int	ft_test_putchar_fd2(char c)
+static int	ft_test_putchar_fd2(const char c)
 {
 	int		res;
 	char	res2;

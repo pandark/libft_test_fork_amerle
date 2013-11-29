@@ -33,9 +33,8 @@ int		ft_test_memcmp(void)
 	int	res;
 	t_struct1 t1;
 	t_struct1 t2;
-	char	*buf;
+	char	buf[] = "test";
 
-	buf = "test";
 	t1.m_str = t2.m_str = buf;
 	t1.m_char = t2.m_char = 't';
 	t1.m_int = t2.m_int = 8997;

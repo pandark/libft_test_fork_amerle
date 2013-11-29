@@ -1,6 +1,6 @@
 #include "test.h"
 
-int	ft_test_isalnum2(char c)
+static int	ft_test_isalnum2(const char c)
 {
 	int	res;
 	int	res2;
@@ -18,13 +18,16 @@ int	ft_test_isalnum2(char c)
 
 int	ft_test_isalnum(void)
 {
-	int	res;
+	int   res;
+  int c;
 
+  c = 0;
 	res = 0;
 	ft_print_begin("ft_isalnum");
-	res += ft_test_isalnum2('e');
-	res += ft_test_isalnum2('A');
-	res += ft_test_isalnum2('0');
-	res += ft_test_isalnum2('\n');
+	while (c <= 127)
+	{
+	  res += ft_test_isalnum2(c);
+	  c++;
+	}
 	return (ft_print_end(res));
 }

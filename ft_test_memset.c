@@ -20,7 +20,7 @@ static int	ft_test_memset2(char *str, char *str2, int n)
 	ft_memset(str, '{', n);
 	memset(str2, '{', n);
 	printf("After : \"%s\" , \"%s\"", str, str2);
-	if (strcmp(str, str2))
+	if (strcmp_bsd(str, str2))
 		++res;
 	ft_print_status(res);
 	return (res);

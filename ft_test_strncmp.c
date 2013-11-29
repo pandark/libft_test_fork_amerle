@@ -8,7 +8,7 @@ static int	ft_test_strncmp2(char const *s1, char const *s2, int n)
 
 	res = 0;
 	res3 = ft_strncmp(s1, s2, n);
-	res2 = strncmp(s1, s2, n);
+	res2 = strncmp_bsd(s1, s2, n);
 	if (res2 != res3)
 		++res;
 	printf("Test : Compare \"%s\" and \"%s\" (%d) { %d | %d }", s1, s2, n, res2, res3);

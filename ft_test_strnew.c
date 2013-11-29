@@ -1,6 +1,6 @@
 #include "test.h"
 
-int	ft_test_strnew2(size_t size)
+static int	ft_test_strnew2(size_t size)
 {
 	int		res;
 	char	*str;
@@ -34,6 +34,6 @@ int	ft_test_strnew(void)
 	res = 0;
 	ft_print_begin("ft_strnew & ft_strdel");
 	res += ft_test_strnew2(1024);
-	res += ft_test_strnew2(0);
+	res += ft_test_strnew2(1);
 	return (ft_print_end(res));
 }

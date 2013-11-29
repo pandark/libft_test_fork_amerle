@@ -11,14 +11,25 @@
 # **************************************************************************** #
 
 CC = gcc
-CFLAGS = -g3 -Wall -Wextra -Werror -O3 -Wstack-protector -fstack-protector -I$(LIBDIR) -I.
+CFLAGS = -g3 -Wall -Wextra -Werror -O3 -Wstack-protector -Wunsafe-loop-optimizations \
+         -fstack-protector-all -Wshadow -Wfatal-errors  -pedantic-errors \
+		  -Wstrict-prototypes -Wmissing-prototypes -Wunreachable-code \
+		 -Wwrite-strings -Wunreachable-code -pedantic -Winline \
+		 -Wunknown-pragmas -Wdeclaration-after-statement \
+		 -Wold-style-definition -Wmissing-field-initializers \
+         -I$(LIBDIR) -I.
+GCCVERSION = $(shell $(CC) --version | grep ^$(CC) | sed 's/^.* //g')
+ifeq "$(GCCVERSION)" "4.8.1"
+    CFLAGS += -Wno-unused-result
+endif
 LD = $(CC)
-LIBDIR = ./libft/
+LIBDIR = ../libft/
 LDFLAGS = -L$(LIBDIR) -lft
 NAME = unit_test
 
 SRCS = 	main.c \
 	   	test.c \
+	   	string_bsd.c \
 	   	ft_test_memset.c \
 	   	ft_test_strcmp.c \
 	   	ft_test_bzero.c \
@@ -52,12 +63,12 @@ SRCS = 	main.c \
 	  	ft_test_putchar.c \
 	   	ft_test_putstr.c \
 	   	ft_test_putendl.c \
-		ft_test_putnbr.c \
+	  	ft_test_putnbr.c \
 	   	ft_test_putchar_fd.c \
 	   	ft_test_putstr_fd.c \
 	   	ft_test_putendl_fd.c \
 	   	ft_test_putnbr_fd.c \
-		ft_test_striter.c \
+	  	ft_test_striter.c \
 	   	ft_test_strmap.c \
 	   	ft_test_strlcat.c \
 	   	ft_test_strsub.c \
@@ -77,7 +88,7 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	(cd libft && $(MAKE) re)
+	(cd $(LIBDIR) && $(MAKE) re)
 	$(LD) -o $(NAME) $^ $(LDFLAGS)
 
 $(OBJS):

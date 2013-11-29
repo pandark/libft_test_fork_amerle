@@ -9,7 +9,7 @@ int	ft_test_strtrim2(char const *s, char const *final)
 	str = ft_strtrim(s);
 	if (!str && ft_strlen(final))
 		++res;
-	else if (str && strcmp(str, final))
+	else if (str && strcmp_bsd(str, final))
 		++res;
 	printf("Test : Trim \"%s\" { \"%s\" }", s, str);
 	free(str);

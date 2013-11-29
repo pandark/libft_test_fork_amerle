@@ -1,6 +1,6 @@
 #include "test.h"
 
-int	ft_test_strncat2(char *s1, char const *s2, int n, size_t len_buf)
+static int	ft_test_strncat2(char *s1, char const *s2, int n, size_t len_buf)
 {
 	int		res;
 	char	*res2;
@@ -13,7 +13,7 @@ int	ft_test_strncat2(char *s1, char const *s2, int n, size_t len_buf)
 	if (res2 != s1)
 		++res;
 	strncat(str2, s2, n);
-	if (strcmp(str2, s1))
+	if (strcmp_bsd(str2, s1))
 		++res;
 	printf("Test : { \"%s\" }", str2);
 	free(str2);

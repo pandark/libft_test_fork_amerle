@@ -24,6 +24,13 @@ int			main(void)
 	g_tests_ok = 0;
 
 	res = 0;
+	res += ft_test_isalpha();
+	res += ft_test_isdigit();
+	res += ft_test_isalnum();
+	res += ft_test_isascii();
+	res += ft_test_isprint();
+	res += ft_test_toupper();
+	res += ft_test_tolower();
 	res += ft_test_memset();
 	res += ft_test_bzero();
 	res += ft_test_memcpy();
@@ -40,13 +47,6 @@ int			main(void)
 	res += ft_test_strcmp();
 	res += ft_test_strncmp();
 	res += ft_test_atoi();
-	res += ft_test_isalpha();
-	res += ft_test_isdigit();
-	res += ft_test_isalnum();
-	res += ft_test_isascii();
-	res += ft_test_isprint();
-	res += ft_test_toupper();
-	res += ft_test_tolower();
 	res += ft_test_strequ();
 	res += ft_test_putchar();
 	res += ft_test_putstr();
@@ -58,16 +58,16 @@ int			main(void)
 	res += ft_test_putnbr_fd();
 	res += ft_test_strclr();
 	res += ft_test_striter();
-  	res += ft_test_strmap();
+  res += ft_test_strmap();
 	res += ft_test_strnew();
 	res += ft_test_strsub();
 	res += ft_test_memallocdel();
 	res += ft_test_strjoin();
 	res += ft_test_memccpy();
-	res += ft_test_memmove();
 	res += ft_test_strlcat();
 	res += ft_test_strcpy();
 	res += ft_test_strncpy();
+	res += ft_test_memmove();
 /*
   res += ft_test_strtrim();
   res += ft_test_strsplit();

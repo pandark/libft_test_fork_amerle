@@ -13,7 +13,8 @@
 #ifndef TEST_H
 # define TEST_H
 
-# include <libft.h>
+# include "libft.h"
+# include "string_bsd.h"
 # include <stdlib.h>
 # include <string.h>
 # include <stdio.h>

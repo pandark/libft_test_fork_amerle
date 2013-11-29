@@ -1,6 +1,6 @@
 #include "test.h"
 
-int	ft_test_toupper2(int c)
+static int	ft_test_toupper2(int c)
 {
 	int	res;
 	int	res2;
@@ -18,13 +18,16 @@ int	ft_test_toupper2(int c)
 
 int	ft_test_toupper(void)
 {
-	int	res;
+	int 	res;
+  char  c;
 
 	res = 0;
+	c = 'a';
 	ft_print_begin("ft_toupper");
-	res += ft_test_toupper2('e');
-	res += ft_test_toupper2('A');
-	res += ft_test_toupper2('0');
-	res += ft_test_toupper2('\n');
+	while (c <= 'z')
+	{
+	  res += ft_test_toupper2((char)c);
+    c++;
+  }
 	return (ft_print_end(res));
 }

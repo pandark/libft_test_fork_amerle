@@ -24,7 +24,7 @@ int		ft_test_memccpy(void)
 	t1.num2 = 5446;
 	res = 0;
 	ft_print_begin("ft_memccpy");
-	bzero((void *)&t2, sizeof(t_memtest));
+	memset((void *)&t2, '\0', sizeof(t_memtest));
 	ft_memccpy((void *)&t2, (const void *)&t1, '{', sizeof(t_memtest));
 	if (!(t2.c == t1.c && t2.c3 == t1.c3 &&
 		 t2.c2 != t1.c2 && t2.num2 != t1.num2))

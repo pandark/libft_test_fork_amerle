@@ -1,6 +1,6 @@
 #include "test.h"
 
-int	ft_test_strrchr2(char const *s, int c)
+static int	ft_test_strrchr2(char const *s, int c)
 {
 	int		res;
 	char	*res2;
@@ -19,7 +19,7 @@ int	ft_test_strrchr2(char const *s, int c)
 int	ft_test_strrchr(void)
 {
 	int		res;
-	char	*str = "Hello world !";
+	const char	*str = "Hello world !";
 
 	res = 0;
 	ft_print_begin("ft_strrchr");

@@ -1,6 +1,6 @@
 #include "test.h"
 
-int	ft_test_putendl_fd2(char const *str, char const *final)
+static int	ft_test_putendl_fd2(char const *str, char const *final)
 {
 	int		res;
 	char	*res2;
@@ -17,7 +17,7 @@ int	ft_test_putendl_fd2(char const *str, char const *final)
 	fd = open("log.txt", O_RDONLY);
 	read(fd, res2, len);
 	close(fd);
-	if (strcmp(res2, final))
+	if (strcmp_bsd(res2, final))
 		++res;
 	printf("Test : \"%s\" { \"%s\" }", str, res2);
 	free(res2);

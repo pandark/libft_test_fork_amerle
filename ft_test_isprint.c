@@ -1,6 +1,6 @@
 #include "test.h"
 
-int	ft_test_isprint2(char c)
+static int	ft_test_isprint2(char c)
 {
 	int	res;
 	int	res2;
@@ -19,13 +19,15 @@ int	ft_test_isprint2(char c)
 int	ft_test_isprint(void)
 {
 	int	res;
+	int c;
 
 	res = 0;
+	c = 0;
 	ft_print_begin("ft_isprint");
-	res += ft_test_isprint2('e');
-	res += ft_test_isprint2('A');
-	res += ft_test_isprint2('0');
-	res += ft_test_isprint2('\n');
-	res += ft_test_isprint2(0xF2);
+  while (c <= 127)
+  {
+    res += ft_test_isprint2(c);
+    c++;
+  }
 	return (ft_print_end(res));
 }

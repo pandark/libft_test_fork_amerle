@@ -1,6 +1,6 @@
 #include "test.h"
 
-int	ft_test_strclr2(char *s)
+static int	ft_test_strclr2(char *s)
 {
 	int		res;
 	size_t	len;
