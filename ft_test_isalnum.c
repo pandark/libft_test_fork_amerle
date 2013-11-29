@@ -11,7 +11,7 @@ static int	ft_test_isalnum2(const char c)
 	res3 = isalnum(c);
 	if (res2 != res3)
 		++res;
-	printf("Test : %c { %d - %d }", c, res2, res3);
+	printf("Test : \'%c\' (%d) { %d - %d }", c, c, res2, res3);
 	ft_print_status(res);
 	return (res);
 }
@@ -19,9 +19,9 @@ static int	ft_test_isalnum2(const char c)
 int	ft_test_isalnum(void)
 {
 	int   res;
-  int c;
+	int c;
 
-  c = 0;
+	c = 0;
 	res = 0;
 	ft_print_begin("ft_isalnum");
 	while (c <= 127)

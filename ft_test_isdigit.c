@@ -11,7 +11,7 @@ static int	ft_test_isdigit2(const char c)
 	res3 = isdigit(c);
 	if (res2 != res3)
 		++res;
-	printf("Test : %c { %d - %d }", c, res2, res3);
+	printf("Test : \'%c\' (%d) { %d - %d }", c, c, res2, res3);
 	ft_print_status(res);
 	return (res);
 }

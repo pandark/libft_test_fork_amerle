@@ -6,7 +6,7 @@
 /*   By: amerle <amerle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 07:50:36 by amerle            #+#    #+#             */
-/*   Updated: 2013/11/20 08:51:28 by amerle           ###   ########.fr       */
+/*   Updated: 2013/11/29 15:03:19 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int		ft_test_memccpy(void)
 	t1.c2 = ',';
 	t1.num2 = 5446;
 	res = 0;
-	ft_print_begin("ft_memccpy");
-	memset((void *)&t2, '\0', sizeof(t_memtest));
+	bzero((void *)&t2, sizeof(t_memtest));
+
 	ft_memccpy((void *)&t2, (const void *)&t1, '{', sizeof(t_memtest));
 	if (!(t2.c == t1.c && t2.c3 == t1.c3 &&
 		 t2.c2 != t1.c2 && t2.num2 != t1.num2))
