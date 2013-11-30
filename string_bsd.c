@@ -11,63 +11,32 @@
  *   than zero, according as the string pointed to by `s1' is greater than,
  *   equal to, or less than the string pointed to by `s2'.  [4.11.4.2]
  */
-#ifdef __APPLE__
+
 int strcmp_bsd(const char *s1, const char *s2)
 {
-	return (strcmp(s1, s2));
+	int	result = strcmp(s1, s2);
+	if (result < 0)
+		return (-1);
+	else if (result > 0)
+		return (1);
+	else
+		return (0);
 }
 
 int strncmp_bsd(const char *s1, const char *s2, size_t n)
 {
-	return (strncmp(s1, s2, n));
+	int result = strncmp(s1, s2, n);
+	if (result < 0)
+		return (-1);
+	else if (result > 0)
+		return (1);
+	else
+		return (0);
 }
 
-#endif /* __APPLE__ */
+
 
 #ifndef __APPLE__
-
-int strcmp_bsd(const char *s1, const char *s2)
-{
-	while (*s1 == *s2++)
-	{
-		if (*s1++ == '\0')
-		{
-			return (0);
-		}
-	}
-	return (*(const unsigned char *)s1 - *(const unsigned char *)(s2 - 1));
-}
-
-/* ANSI sez:
- *   The `strncmp' function compares not more than `n' characters (characters
- *   that follow a null character are not compared) from the array pointed to
- *   by `s1' to the array pointed to by `s2'.
- *   The `strncmp' function returns an integer greater than, equal to, or less
- *   than zero, according as the possibly null-terminated array pointed to by
- *   `s1' is greater than, equal to, or less than the possibly null-terminated
- *   array pointed to by `s2'.  [4.11.4.4]
-*/
-
-int strncmp_bsd(const char *s1, const char *s2, size_t n)
-{
-	if (n == 0)
-	{
-		return (0);
-	}
-	do {
-		if (*s1 != *s2++)
-		{
-			return (*(const unsigned char *)s1 -
-					*(const unsigned char *)(s2 - 1));
-		}
-		if (*s1++ == '\0')
-			{
-				break ;
-			}
-	} while (--n != 0);
-	return (0);
-}
-
 #if defined(LIBC_SCCS) && !defined(lint)
 static char sccsid[] = "@(#)strstr.c	8.1 (Berkeley) 6/4/93";
 # endif /* LIBC_SCCS and not lint */

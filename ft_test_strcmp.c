@@ -19,8 +19,14 @@ static int 	ft_test_strcmp2(const char *str, const char *str2)
 	int	res3;
 
 	res = 0;
-	res3 = ft_strcmp(str, str2);
-	res2 = strcmp_bsd(str, str2);
+	res2 = ft_strcmp(str, str2);
+	if (res2 < 0)
+		res2 = -1;
+	else if (res2 > 0)
+		res2 = 1;
+	else
+		res2 = 0;
+	res3 = strcmp_bsd(str, str2);
 	printf("Compare \"%s\" and \"%s\" { %d | %d }", str, str2, res2, res3);
 	if (res2 != res3)
 		++res;
