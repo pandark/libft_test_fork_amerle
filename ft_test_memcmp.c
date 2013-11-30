@@ -12,6 +12,16 @@
 
 #include "test.h"
 
+static int  ft_nearzero(int n)
+{
+	if (n < 0)
+		return (-1);
+	else if (n > 0)
+		return (1);
+	else
+	  return (0);
+}
+
 static int	ft_tmemcmp2(const void *mem1, const void *mem2, size_t n)
 {
 	int	res;
@@ -19,8 +29,8 @@ static int	ft_tmemcmp2(const void *mem1, const void *mem2, size_t n)
 	int	res3;
 
 	res = 0;
-	res2 = ft_memcmp(mem1, mem2, n);
-	res3 = memcmp(mem1, mem2, n);
+	res2 = ft_nearzero(ft_memcmp(mem1, mem2, n));
+	res3 = ft_nearzero(memcmp(mem1, mem2, n));
 	if (res2 != res3)
 		++res;
 	printf("Test : { %d - %d }", res2, res3);
