@@ -8,7 +8,7 @@ static int	ft_test_isprint2(char c)
 
 	res = 0;
 	res3 = ft_isprint(c);
-	res2 = isprint(c);
+	res2 = isprint(c) || 0;
 	if (res2 != res3)
 		++res;
 	printf("Test : \'%c\' (%d) { %d - %d }", c, c, res2, res3);

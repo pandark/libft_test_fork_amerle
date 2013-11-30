@@ -8,7 +8,7 @@ static int	ft_test_isalnum2(const char c)
 
 	res = 0;
 	res2 = ft_isalnum(c);
-	res3 = isalnum(c);
+	res3 = (isalnum(c) || 0);
 	if (res2 != res3)
 		++res;
 	printf("Test : \'%c\' (%d) { %d - %d }", c, c, res2, res3);

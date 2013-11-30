@@ -8,7 +8,7 @@ static int	ft_test_isdigit2(const char c)
 
 	res = 0;
 	res2 = ft_isdigit(c);
-	res3 = isdigit(c);
+	res3 = isdigit(c) || 0;
 	if (res2 != res3)
 		++res;
 	printf("Test : \'%c\' (%d) { %d - %d }", c, c, res2, res3);

@@ -8,7 +8,7 @@ static int	ft_test_isascii2(const char c)
 
 	res = 0;
 	res2 = ft_isascii(c);
-	res3 = isascii(c);
+	res3 = isascii(c) || 0;
 	if (res2 != res3)
 		++res;
 	printf("Test : \'%c\' (%d) { %d - %d }", c, c, res2, res3);
@@ -21,10 +21,10 @@ int	ft_test_isascii(void)
 	int	            res;
 	int   c;
 
-	c = 0;
+	c = -5;
 	res = 0;
 	ft_print_begin("ft_isascii");
-	while (c <= 127)
+	while (c <= 200)
 	{
 	  res += ft_test_isascii2(c);
 	  c++;
