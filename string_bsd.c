@@ -11,6 +11,21 @@
  *   than zero, according as the string pointed to by `s1' is greater than,
  *   equal to, or less than the string pointed to by `s2'.  [4.11.4.2]
  */
+#ifdef __APPLE__
+int strcmp_bsd(const char *s1, const char *s2)
+{
+	return (strcmp(s1, s2));
+}
+
+int strncmp_bsd(const char *s1, const char *s2, size_t n)
+{
+	return (strncmp(s1, s2, n));
+}
+
+#endif /* __APPLE__ */
+
+#ifndef __APPLE__
+
 int strcmp_bsd(const char *s1, const char *s2)
 {
 	while (*s1 == *s2++)
@@ -31,7 +46,7 @@ int strcmp_bsd(const char *s1, const char *s2)
  *   than zero, according as the possibly null-terminated array pointed to by
  *   `s1' is greater than, equal to, or less than the possibly null-terminated
  *   array pointed to by `s2'.  [4.11.4.4]
- */
+*/
 
 int strncmp_bsd(const char *s1, const char *s2, size_t n)
 {
@@ -57,7 +72,7 @@ int strncmp_bsd(const char *s1, const char *s2, size_t n)
 static char sccsid[] = "@(#)strstr.c	8.1 (Berkeley) 6/4/93";
 # endif /* LIBC_SCCS and not lint */
 
-#ifndef __APPLE__
+
 /*
  * Find the first occurrence of find in s, where the search is limited to the
  * first slen characters of s.

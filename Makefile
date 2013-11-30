@@ -6,7 +6,7 @@
 #    By: amerle <amerle@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/19 14:29:45 by amerle            #+#    #+#              #
-#    Updated: 2013/11/26 18:45:18 by aviala           ###   ########.fr        #
+#    Updated: 2013/11/30 05:42:18 by aviala           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,9 +73,9 @@ SRCS = 	main.c \
 	   	ft_test_strlcat.c \
 	   	ft_test_strsub.c \
 	   	ft_test_strjoin.c \
-	   	ft_test_memallocdel.c
+	   	ft_test_memallocdel.c \
+	   	ft_test_strsplit.c
 #	  	ft_test_strtrim.c \
-#	   	ft_test_strsplit.c
 #	   	ft_test_itoa.c \
 #		ft_test_lstiter.c
 #	   	ft_test_lstnew.c \

@@ -6,7 +6,7 @@
 /*   By: amerle <amerle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 14:33:54 by amerle            #+#    #+#             */
-/*   Updated: 2013/11/27 12:49:18 by aviala           ###   ########.fr       */
+/*   Updated: 2013/11/30 05:42:58 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int			main(void)
 	res += ft_test_putnbr_fd();
 	res += ft_test_strclr();
 	res += ft_test_striter();
-  res += ft_test_strmap();
+	res += ft_test_strmap();
 	res += ft_test_strnew();
 	res += ft_test_strsub();
 	res += ft_test_memallocdel();
@@ -68,9 +68,10 @@ int			main(void)
 	res += ft_test_strcpy();
 	res += ft_test_strncpy();
 	res += ft_test_memmove();
+	res += ft_test_strsplit();
 /*
   res += ft_test_strtrim();
-  res += ft_test_strsplit();
+
 	res += ft_test_itoa();
 	res += ft_test_lstnew();
 	res += ft_test_lstdelone();
