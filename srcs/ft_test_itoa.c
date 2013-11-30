@@ -1,6 +1,6 @@
 #include "test.h"
 
-int	ft_test_itoa2(int number, char const *final)
+static int	ft_test_itoa2(int number, char const *final)
 {
 	int		res;
 	char	*res2;
