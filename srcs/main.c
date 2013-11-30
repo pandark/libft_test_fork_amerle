@@ -67,7 +67,7 @@ int			main(void)
 	res += ft_test_strlcat();
 	res += ft_test_strcpy();
 	res += ft_test_strncpy();
-	res += ft_test_memmove();
+	/*	res += ft_test_memmove(); */
 	res += ft_test_strsplit();
 /*
   res += ft_test_strtrim();
