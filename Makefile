@@ -24,9 +24,10 @@ ifeq "$(GCCVERSION)" "4.8.1"
 endif
 LD = $(CC)
 LIBDIR = ../libft/
+SRCDIR = ./srcs
+OBJDIR = ./objs
+INCDIR = ./include
 LDFLAGS = -L$(LIBDIR) -lft
-NAME = unit_test
-
 SRCS = 	main.c \
 	   	test.c \
 	   	string_bsd.c \
@@ -84,18 +85,20 @@ SRCS = 	main.c \
 #	   	ft_test_lstadd.c \
 #	   	ft_test_lstmap.c
 OBJS = $(SRCS:.c=.o)
-
+OBJS_PREF = $(addprefix $(OBJDIR)/, $(OBJS))
+NAME = unit_test
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	(cd $(LIBDIR) && $(MAKE) re)
-	$(LD) -o $(NAME) $^ $(LDFLAGS)
+	$(LD) -o $(NAME) $(OBJS_PREF) $(LDFLAGS)  -I$(INCDIR)
 
 $(OBJS):
-	$(CC) -o $*.o -c $*.c $(CFLAGS)
+	$(CC) -o $(OBJDIR)/$*.o -c $(SRCDIR)/$*.c $(CFLAGS) -I$(INCDIR)
 
 clean:
-	rm -f $(OBJS)
+	echo $(OBJS_PREF)
+	rm -f $(OBJS_PREF)
 
 fclean: clean
 	rm -f $(NAME)
