@@ -89,19 +89,18 @@ OBJS_PREF = $(addprefix $(OBJDIR)/, $(OBJS))
 NAME = unit_test
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	(cd $(LIBDIR) && $(MAKE) re)
-	$(LD) -o $(NAME) $(OBJS_PREF) $(LDFLAGS)  -I$(INCDIR)
+$(NAME): $(OBJS_PREF)
+	(cd $(LIBDIR) && $(MAKE))
+	$(LD) -o $@ $^ $(LDFLAGS) -I$(INCDIR)
 
-$(OBJS):
-	$(CC) -o $(OBJDIR)/$*.o -c $(SRCDIR)/$*.c $(CFLAGS) -I$(INCDIR)
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
+	$(CC) -o $@ -c $< $(CFLAGS) -I$(INCDIR)
 
 clean:
-	echo $(OBJS_PREF)
-	rm -f $(OBJS_PREF)
+	@rm -f $(OBJS_PREF)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 
