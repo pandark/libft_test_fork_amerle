@@ -91,10 +91,10 @@ all: $(NAME)
 
 $(NAME): $(OBJS_PREF)
 	(cd $(LIBDIR) && $(MAKE) re)
-	$(LD) -o $@ $^ $(LDFLAGS) -I$(INCDIR)
+	@$(LD) -o $@ $^ $(LDFLAGS) -I$(INCDIR)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
-	$(CC) -o $@ -c $< $(CFLAGS) -I$(INCDIR)
+	@$(CC) -o $@ -c $< $(CFLAGS) -I$(INCDIR)
 
 clean:
 	@rm -f $(OBJS_PREF)
