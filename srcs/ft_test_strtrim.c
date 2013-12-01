@@ -1,6 +1,6 @@
 #include "test.h"
 
-int	ft_test_strtrim2(char const *s, char const *final)
+static int	ft_test_strtrim2(char const *s, char const *final)
 {
 	int		res;
 	char	*str;
@@ -11,7 +11,7 @@ int	ft_test_strtrim2(char const *s, char const *final)
 		++res;
 	else if (str && strcmp_bsd(str, final))
 		++res;
-	printf("Test : Trim \"%s\" { \"%s\" }", s, str);
+	printf("Test : Trim \"%s\" { \"%s\" | \"%s\" }", s, str, final);
 	free(str);
 	ft_print_status(res);
 	return (res);
@@ -27,6 +27,7 @@ int	ft_test_strtrim(void)
 	res += ft_test_strtrim2("       ", "");
 	res += ft_test_strtrim2("teerierginerngeringerge   \t", "teerierginerngeringerge");
 	res += ft_test_strtrim2(" teerierginerngeringerge", "teerierginerngeringerge");
+	res += ft_test_strtrim2("Chat", "Chat");
 	res += ft_test_strtrim2("", "");
 	return (ft_print_end(res));
 }

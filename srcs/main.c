@@ -6,7 +6,7 @@
 /*   By: amerle <amerle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 14:33:54 by amerle            #+#    #+#             */
-/*   Updated: 2013/11/30 05:42:58 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/01 15:17:14 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,8 @@ int			main(void)
 	res += ft_test_strncpy();
 	/*	res += ft_test_memmove(); */
 	res += ft_test_strsplit();
+	res += ft_test_strtrim();
 /*
-  res += ft_test_strtrim();
-
 	res += ft_test_itoa();
 	res += ft_test_lstnew();
 	res += ft_test_lstdelone();
