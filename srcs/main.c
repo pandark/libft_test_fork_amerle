@@ -17,9 +17,9 @@ int			main(void)
 	int		res;
 	int 	percent;
 
-	signal(SIGSEGV, ft_segfault);
+	/*	signal(SIGSEGV, ft_segfault);
 	signal(SIGBUS, ft_buserror);
-
+	*/
 	g_tests = 0;
 	g_tests_ok = 0;
 

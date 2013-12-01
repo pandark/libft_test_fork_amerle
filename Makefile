@@ -11,10 +11,10 @@
 # **************************************************************************** #
 
 CC = gcc
-CFLAGS = -g3 -Wall -Wextra -Werror -O3 -Wstack-protector -Wunsafe-loop-optimizations \
+CFLAGS = -g -Wall -Wextra -Werror -O3 -Wstack-protector -Wwrite-strings\
          -fstack-protector-all -Wshadow -Wfatal-errors  -pedantic-errors \
-		  -Wstrict-prototypes -Wmissing-prototypes -Wunreachable-code \
-		 -Wwrite-strings -Wunreachable-code -pedantic -Winline \
+		 -Wstrict-prototypes -Wmissing-prototypes -Wunreachable-code \
+		 -Wunreachable-code -pedantic -Winline -Wunsafe-loop-optimizations \
 		 -Wunknown-pragmas -Wdeclaration-after-statement \
 		 -Wold-style-definition -Wmissing-field-initializers \
          -I$(LIBDIR) -I.
@@ -90,7 +90,7 @@ NAME = unit_test
 all: $(NAME)
 
 $(NAME): $(OBJS_PREF)
-	(cd $(LIBDIR) && $(MAKE))
+	(cd $(LIBDIR) && $(MAKE) re)
 	$(LD) -o $@ $^ $(LDFLAGS) -I$(INCDIR)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
