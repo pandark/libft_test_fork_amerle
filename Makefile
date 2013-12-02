@@ -6,7 +6,7 @@
 #    By: amerle <amerle@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/19 14:29:45 by amerle            #+#    #+#              #
-#    Updated: 2013/12/01 15:56:56 by aviala           ###   ########.fr        #
+#    Updated: 2013/12/02 05:22:57 by aviala           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = gcc
 CFLAGS = -g -Wall -Wextra -Werror -O3 -Wstack-protector -Wwrite-strings\
          -fstack-protector-all -Wshadow -Wfatal-errors  -pedantic-errors \
 		 -Wstrict-prototypes -Wmissing-prototypes -Wunreachable-code \
-		 -Wunreachable-code -pedantic -Winline -Wunsafe-loop-optimizations \
+		 -Wunreachable-code -pedantic -Winline \
 		 -Wunknown-pragmas -Wdeclaration-after-statement \
 		 -Wold-style-definition -Wmissing-field-initializers \
          -I$(LIBDIR) -I.
@@ -76,13 +76,13 @@ SRCS = 	main.c \
 	   	ft_test_strjoin.c \
 	   	ft_test_memallocdel.c \
 	   	ft_test_strsplit.c \
-	  	ft_test_strtrim.c
-#	   	ft_test_itoa.c \
-#		ft_test_lstiter.c
-#	   	ft_test_lstnew.c \
-#	   	ft_test_lstdelone.c \
-#	   	ft_test_lstdel.c \
-#	   	ft_test_lstadd.c \
+	  	ft_test_strtrim.c \
+	   	ft_test_itoa.c \
+	   	ft_test_lstnew.c \
+	   	ft_test_lstdelone.c \
+	   	ft_test_lstadd.c \
+	   	ft_test_lstdel.c \
+		ft_test_lstiter.c
 #	   	ft_test_lstmap.c
 OBJS = $(SRCS:.c=.o)
 OBJS_PREF = $(addprefix $(OBJDIR)/, $(OBJS))

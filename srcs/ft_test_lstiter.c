@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_test_lstiter.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amerle <amerle@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2013/12/02 04:10:01 by amerle            #+#    #+#             */
+/*   Updated: 2013/12/02 05:30:08 by aviala           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "test.h"
 
 static void	ft_test_lstiter_iter(t_list *elem)
@@ -7,7 +19,7 @@ static void	ft_test_lstiter_iter(t_list *elem)
 	if (elem)
 	{
 		ptr = (int *)elem->content;
-		++(*ptr);
+		*ptr += 1;
 	}
 }
 
@@ -18,6 +30,8 @@ int	ft_test_lstiter(void)
 	int		i2;
 	t_list	*elem;
 	t_list	*elem2;
+	int		*tmp1;
+	int		*tmp2;
 
 	res = 0;
 	i1 = 150;
@@ -29,10 +43,25 @@ int	ft_test_lstiter(void)
 	elem->content = (void *)&i1;
 	elem->content_size = elem2->content_size = sizeof(int);
 	elem2->content = (void *)&i2;
-	elem2->next = 0;
+	elem2->content_size = elem2->content_size = sizeof(int);
+	elem2->next = NULL;;
 	ft_lstiter(elem, ft_test_lstiter_iter);
-	if (i1 != 151 || i2 != -129)
-		++res;
+	tmp1 = (int *) elem->content;
+	tmp2 = (int *) elem2->content;
+	if (*tmp1 != 151)
+	{
+		printf("*(elem->content) (%d) != (151)\n", *tmp1);
+		res++;
+	}
+	else if (*tmp2 != -129)
+	{
+		printf("*(elem2->content) (%d) != (-129)\n", *tmp2);
+		res++;
+	}
+	else
+	{
+		print("Test passed function passed as argument was applied./n");
+	}
 	printf("Test");
 	ft_print_status(res);
 	return (ft_print_end(res));

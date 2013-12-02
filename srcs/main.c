@@ -6,7 +6,7 @@
 /*   By: amerle <amerle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 14:33:54 by amerle            #+#    #+#             */
-/*   Updated: 2013/12/01 15:17:14 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/02 03:58:32 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int			main(void)
 {
 	int		res;
 	int 	percent;
-
-	/*	signal(SIGSEGV, ft_segfault);
-	signal(SIGBUS, ft_buserror);
+	/*
+	**	signal(SIGSEGV, ft_segfault);
+	**	signal(SIGBUS, ft_buserror);
 	*/
 	g_tests = 0;
 	g_tests_ok = 0;
@@ -70,14 +70,14 @@ int			main(void)
 	/*	res += ft_test_memmove(); */
 	res += ft_test_strsplit();
 	res += ft_test_strtrim();
-/*
 	res += ft_test_itoa();
 	res += ft_test_lstnew();
 	res += ft_test_lstdelone();
-	res += ft_test_lstdel();
 	res += ft_test_lstadd();
-	res += ft_test_lstmap();
+	res += ft_test_lstdel();
 	res += ft_test_lstiter();
+/*
+	res += ft_test_lstmap();
 */
 	percent = g_tests_ok * 100 / g_tests;
 	printf("\nPourcentage de reussite : \033[%dm%d\033[0m %%\n",
