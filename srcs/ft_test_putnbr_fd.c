@@ -19,7 +19,7 @@ static int	ft_test_putnbr_fd2(int number, char const *final)
 	close(fd);
 	if (strcmp_bsd(res2, final))
 		++res;
-	printf("Test : %d { \"%s\" | \"%s\" }", number, final, res2);
+	printf("Test : %d { \"%s\" | \"%s\" }", number, res2 ,final);
 	free(res2);
 	ft_print_status(res);
 	return (res);
