@@ -26,6 +26,8 @@ int	ft_test_itoa(void)
 	res = 0;
 	ft_print_begin("ft_itoa");
 	res += ft_test_itoa2(45, "45");
+	res += ft_test_itoa2(789, "789");
+	res += ft_test_itoa2(-789, "-789");
 	res += ft_test_itoa2(0, "0");
 	res += ft_test_itoa2(-45, "-45");
 	res += ft_test_itoa2(-2147483648, "-2147483648");

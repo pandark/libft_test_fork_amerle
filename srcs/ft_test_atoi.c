@@ -26,6 +26,8 @@ int	ft_test_atoi(void)
 	res += ft_test_atoi2("0");
 	res += ft_test_atoi2("2000000");
 	res += ft_test_atoi2("\0\v\t\n\r\f2000000");
+	res += ft_test_atoi2("-2147483648");
+	res += ft_test_atoi2("2147483647");
 	res += ft_test_atoi2("-458");
 	res += ft_test_atoi2("+123");
 	res += ft_test_atoi2("154abcd");

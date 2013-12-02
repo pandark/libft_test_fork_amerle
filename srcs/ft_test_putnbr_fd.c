@@ -34,5 +34,7 @@ int	ft_test_putnbr_fd(void)
 	res += ft_test_putnbr_fd2(0, "0");
 	res += ft_test_putnbr_fd2(15642, "15642");
 	res += ft_test_putnbr_fd2(-1000005, "-1000005");
+	res += ft_test_putnbr_fd2(-2147483648, "-2147483648");
+	res += ft_test_putnbr_fd2(2147483647, "2147483647");
 	return (ft_print_end(res));
 }
