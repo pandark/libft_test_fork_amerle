@@ -6,7 +6,7 @@
 /*   By: amerle <amerle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/02 04:10:01 by amerle            #+#    #+#             */
-/*   Updated: 2013/12/02 05:30:08 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/02 06:02:08 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	ft_test_lstiter(void)
 	}
 	else
 	{
-		print("Test passed function passed as argument was applied./n");
+		printf("Test passed function passed as argument was applied./n");
 	}
 	printf("Test");
 	ft_print_status(res);

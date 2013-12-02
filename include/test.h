@@ -6,7 +6,7 @@
 /*   By: amerle <amerle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 06:55:12 by amerle            #+#    #+#             */
-/*   Updated: 2013/11/25 14:29:32 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/01 21:22:09 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,14 +95,13 @@ int 	ft_test_putchar_fd(void);
 int 	ft_test_putstr_fd(void);
 int 	ft_test_putendl_fd(void);
 int 	ft_test_putnbr_fd(void);
-/*
 int 	ft_test_lstnew(void);
 int 	ft_test_lstdelone(void);
 int 	ft_test_lstdel(void);
 int 	ft_test_lstadd(void);
 int 	ft_test_lstiter(void);
 int 	ft_test_lstmap(void);
-*/
+
 int	g_tests_ok;
 int g_tests;
 
