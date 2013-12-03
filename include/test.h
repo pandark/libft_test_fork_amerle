@@ -80,6 +80,7 @@ int 	ft_test_memallocdel(void);
 int 	ft_test_strnew(void);
 int 	ft_test_strclr(void);
 int 	ft_test_striter(void);
+int		ft_test_striteri(void);
 int 	ft_test_strmap(void);
 int 	ft_test_strequ(void);
 int 	ft_test_strsub(void);

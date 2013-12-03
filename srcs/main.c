@@ -6,7 +6,7 @@
 /*   By: amerle <amerle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 14:33:54 by amerle            #+#    #+#             */
-/*   Updated: 2013/12/02 03:58:32 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/02 20:24:37 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,36 +47,45 @@ int			main(void)
 	res += ft_test_strcmp();
 	res += ft_test_strncmp();
 	res += ft_test_atoi();
-	res += ft_test_strequ();
-	res += ft_test_putchar();
-	res += ft_test_putstr();
-	res += ft_test_putendl();
-	res += ft_test_putnbr();
-	res += ft_test_putchar_fd();
-	res += ft_test_putstr_fd();
-	res += ft_test_putendl_fd();
-	res += ft_test_putnbr_fd();
-	res += ft_test_strclr();
-	res += ft_test_striter();
-	res += ft_test_strmap();
-	res += ft_test_strnew();
-	res += ft_test_strsub();
-	res += ft_test_memallocdel();
-	res += ft_test_strjoin();
 	res += ft_test_memccpy();
 	res += ft_test_strlcat();
 	res += ft_test_strcpy();
 	res += ft_test_strncpy();
-	/*	res += ft_test_memmove(); */
+	res += ft_test_memmove();
+
+	res += ft_test_strequ();
+
+	res += ft_test_strclr();
+
+	res += ft_test_strnew();
+	res += ft_test_strsub();
+	res += ft_test_memallocdel();
+	res += ft_test_strjoin();
+
+	res += ft_test_putchar();
+	res += ft_test_putstr();
+	res += ft_test_putendl();
+	res += ft_test_putchar_fd();
+	res += ft_test_putnbr();
+	res += ft_test_putendl_fd();
+	res += ft_test_putnbr_fd();
+	res += ft_test_strmap();
+	res += ft_test_striteri();
+
+/*
+	res += ft_test_putstr_fd();
+	res += ft_test_striter();
 	res += ft_test_strsplit();
 	res += ft_test_strtrim();
 	res += ft_test_itoa();
+*/
+/*
 	res += ft_test_lstnew();
 	res += ft_test_lstdelone();
 	res += ft_test_lstadd();
 	res += ft_test_lstdel();
 	res += ft_test_lstiter();
-/*
+
 	res += ft_test_lstmap();
 */
 	percent = g_tests_ok * 100 / g_tests;
