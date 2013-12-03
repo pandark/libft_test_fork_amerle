@@ -39,7 +39,7 @@ int	ft_test_lstmap(void)
 	if (!new_list || !new_list->next)
 	{
 		++res;
-		printf("bad alloc { %p - %p }\n", new_list, (new_list) ? new_list->next : 0);
+		printf("bad alloc { %p - %p }\n", (void *)new_list, (void *)((new_list) ? new_list->next : NULL));
 	}
 	else
 	{
