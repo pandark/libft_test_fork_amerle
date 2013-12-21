@@ -5,10 +5,10 @@ static char		g_is_delete;
 
 static void	ft_test_lstdelone2_del(void *content, size_t content_size)
 {
-	char	*str;
+	char	**str;
 
-	str = (char *)content;
-	if (str && content_size == strlen(str))
+	str = (char **)content;
+	if (*str && content_size == strlen(*str))
 		g_is_delete = 1;
 }
 
